@@ -10,7 +10,6 @@ driver.maximize_window()
 #SearchBox
 
 driver.find_element_by_css_selector("input[type='search']").send_keys("ber")
-time.sleep(5)
 driver.find_element_by_css_selector("button[type='submit']").click()
 time.sleep(5)
 #added all the item to cart
@@ -19,7 +18,7 @@ products = driver.find_elements_by_xpath("//div/div/button[text()='ADD TO CART']
 #//div/div/button[text()='ADD TO CART']/parent::div/parent::div/h4
 for product in products:
     print(product.find_element_by_xpath("parent::div/parent::div/h4").text)
-    time.sleep(5)
+    time.sleep(2)
     list1.append(product.find_element_by_xpath("parent::div/parent::div/h4").text)
     product.click()
 print(list1)
